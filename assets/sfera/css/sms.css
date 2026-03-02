@@ -1,0 +1,289 @@
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease;
+  z-index: 9999;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 10001;
+  background: var(--color-surface, #ffffff);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+  margin: auto;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary, #666666);
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: var(--color-secondary, #f5f5f5);
+  color: var(--color-text, #0d0d0d);
+}
+
+/* ===== ЗАГОЛОВОК МОДАЛИ ===== */
+.modal-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text, #0d0d0d);
+  margin: 0 0 8px 0;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary, #666666);
+  margin: 0;
+}
+
+/* ===== ФОРМА В МОДАЛИ ===== */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text, #0d0d0d);
+}
+
+.form-group input {
+  padding: 14px 16px;
+  border: 1px solid var(--color-border, #d9d9d9);
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--color-text, #0d0d0d);
+  background: var(--color-background, #f8f8f8);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary, #005bff);
+  box-shadow: 0 0 0 3px rgba(0, 91, 255, 0.1);
+  background: var(--color-surface, #ffffff);
+}
+
+.form-group input::placeholder {
+  color: var(--color-text-secondary, #999999);
+}
+
+/* ===== ТЕЛЕФОННЫЙ ВВОД ===== */
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border, #d9d9d9);
+  border-radius: 8px;
+  background: var(--color-background, #f8f8f8);
+  transition: all 0.2s ease;
+}
+
+.phone-input-wrapper:focus-within {
+  border-color: var(--color-primary, #005bff);
+  box-shadow: 0 0 0 3px rgba(0, 91, 255, 0.1);
+  background: var(--color-surface, #ffffff);
+}
+
+.phone-prefix {
+  padding: 14px 12px;
+  color: var(--color-text, #0d0d0d);
+  font-weight: 500;
+  border-right: 1px solid var(--color-border, #e5e5e5);
+}
+
+.phone-input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 14px 12px;
+}
+
+.phone-input-wrapper input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===== КНОПКИ ===== */
+.btn {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: #005bff;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 91, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background: #0047b3;
+  box-shadow: 0 4px 16px rgba(0, 91, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  background: #003d99;
+  transform: translateY(0);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+
+/* ===== СООБЩЕНИЯ ===== */
+.sms-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  display: none;
+}
+
+.sms-message.success {
+  display: block;
+  background: rgba(0, 168, 89, 0.1);
+  color: #00a859;
+  border: 1px solid rgba(0, 168, 89, 0.3);
+}
+
+.sms-message.error {
+  display: block;
+  background: rgba(255, 23, 68, 0.1);
+  color: #ff1744;
+  border: 1px solid rgba(255, 23, 68, 0.3);
+}
+
+/* ===== ПОДВАЛ МОДАЛИ ===== */
+.modal-help-text {
+  font-size: 12px;
+  color: var(--color-text-secondary, #999999);
+  margin: 0;
+  text-align: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border, #e5e5e5);
+}
+
+.code-timer {
+  font-size: 12px;
+  color: var(--color-text-secondary, #666666);
+  margin: 0;
+}
+
+.resend-link {
+  font-size: 12px;
+  color: var(--color-primary, #005bff);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.resend-link:hover {
+  color: #0047b3;
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .modal-dialog {
+    width: 95%;
+    padding: 24px;
+    max-width: 100%;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}

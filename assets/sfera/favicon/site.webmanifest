@@ -1,0 +1,21 @@
+{
+  "name": "Творческий Центр СФЕРА",
+  "short_name": "Творческий Центр СФЕРА",
+  "icons": [
+    {
+      "src": "/assets/sfera/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/sfera/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#8F87C0",
+  "background_color": "#8F87C0",
+  "display": "standalone"
+}

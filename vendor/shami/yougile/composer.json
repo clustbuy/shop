@@ -1,0 +1,25 @@
+{
+    "name": "shami/yougile",
+    "description": "YouGile REST API\n",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Shamil Shafeev",
+            "email": "shamilshafeev@gmail.com",
+            "homepage": "https://shafeev.net/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php" : ">=5.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yougile\\": "src/"
+        }
+    }
+}
