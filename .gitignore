@@ -1,0 +1,19 @@
+# OpenServer / временные файлы
+.osp/
+site/libs/smarty/templates_c/
+*.log
+/logs/
+/temp/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Другие временные файлы
+*.tmp
+*.bak

@@ -39,7 +39,7 @@ class router extends aModule{
         if (empty($arr['q']))
         {
             // если пусто, считаем что это index и сразу отправляем на страницу главной витрины
-            print ($_SESSION['smarty']->fetch('str:'.$rout.'/e404'));
+            print ($_SESSION['smarty']->fetch('str:'.$rout.'/home'));
 
             $_SESSION['ts']['115_router_after_show_case'] = (string)get_period();
         }
