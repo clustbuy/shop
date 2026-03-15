@@ -10,6 +10,7 @@ class e404 extends aModule
             'text'  => json_encode($arr, JSON_UNESCAPED_UNICODE),
             'ip'    => $this->get_ip()
         ]);
+        //print ($_SESSION['smarty']->fetch('sfera/e404/e404.tpl'));
         print ($_SESSION['smarty']->fetch('sfera/e404/e404.tpl'));
     }
 }
