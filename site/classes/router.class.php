@@ -15,7 +15,12 @@ class router extends aModule{
             $_SESSION['smarty']->assign('post', $post);  // отправляем в шаблонизатор
         }
 
-
+        if ($this->url == '/catalog' || $this->url == '/catalog/') 
+        {
+            $mod = new opticscat();
+            print $mod->execute();
+            exit;
+        }
 
         if($arr['q'] == 'sitemap.xml') {print ($_SESSION['smarty']->fetch('str:'.$rout.'/sitemap')); die();}
 
