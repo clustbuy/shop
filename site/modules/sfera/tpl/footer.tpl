@@ -1,4 +1,4 @@
- <div id="footer">
+ <footer>
         <div id="footer_container">
             <div id="footer_menu">
                 <div id="footer_icons">
@@ -48,4 +48,4 @@
                 © 2013—2026 оптика «МастерГлассес»
             </div>
         </div>
-    </div>
+    </footer>

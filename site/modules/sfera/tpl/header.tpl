@@ -1,4 +1,4 @@
-<div id="header" class="floating_header">
+<header class="floating_header">
         <div class="wrapper_content">
             <div id="logo">
                 <a href="/"><img src="assets/sfera/img/logo/logo_new_header.svg" alt=""></a>
@@ -29,4 +29,4 @@
                 </tbody>
             </table>
         </nav>
-    </div>
+    </header>
