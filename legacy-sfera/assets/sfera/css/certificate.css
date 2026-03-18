@@ -1,0 +1,101 @@
+.fonts-loaded .b2b__mybook-title {
+    font-family: Unbounded, sans-serif;
+}
+
+.b2b__page3-text4 {
+    margin: 20px 0 0;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #212121;
+    text-align: center;
+}
+
+.b2b__h2 {
+    margin: 0 auto;
+    padding: 0 0 15px;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: #6a3b52;
+    position: relative;
+    font-weight: 700;
+}
+
+.b2b__mybook {
+    display: table;
+    font-size: 0;
+    width: 100%;
+    text-align: center
+}
+
+.b2b__mybook-item {
+    padding: 30px 0 0
+}
+
+.b2b__mybook-img {
+    width: 200px;
+    margin-bottom: 20px
+}
+
+.b2b__mybook-title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #f47055;
+    text-align: center;
+    font-family: Unbounded, sans-serif;
+}
+
+.fonts-loaded .b2b__mybook-title {
+    font-family: Unbounded,sans-serif
+}
+
+.b2b__mybook-text {
+    font-size: .8125rem;
+    line-height: 1.54;
+    color: #806773;
+    text-align: center;
+    margin-top: 10px
+}
+
+@media (min-width: 992px) {
+    .b2b__mybook-img {
+        width: 254px;
+        margin-bottom: 30px;
+    }
+
+    .b2b__mybook-text {
+        font-size: 1rem;
+        line-height: 1.63;
+        margin-top: 15px;
+    }
+
+    .b2b__mybook-item {
+        width: 30%;
+        margin-top: 46px;
+    }
+
+    .b2b__page3-text4 {
+        margin-top: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    .b2b__h2 {
+        font-size: 3rem;
+        line-height: 3.875rem;
+        padding-bottom: 25px;
+    }
+}
+
+@media (min-width: 770px) {
+    .b2b__mybook-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 290px;
+        padding: 30px 15px 0;
+    }
+}

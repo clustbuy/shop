@@ -1,0 +1,207 @@
+/* ОБНОВЛЕННЫЕ СТИЛИ (Blue Theme) */
+
+/* Общие отступы и шрифты */
+.buy-page { padding-top: 40px; padding-bottom: 80px; font-family: 'Open Sans', sans-serif; }
+.buy-page h1 { font-size: 32px; font-weight: 700; margin-bottom: 30px; color: #0d0d0d; }
+
+/* Блок описания */
+.buy-description {
+    background: #ffffff;
+    border: 1px solid #e0e6ed; /* Чуть голубоватый бордер */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(47, 103, 208, 0.05); /* Легкая синяя тень */
+    margin-bottom: 30px;
+}
+.buy-description h2 { font-size: 24px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a; }
+.buy-description p { margin-bottom: 15px; color: #4a5568; line-height: 1.6; }
+
+/* Инфо-блок (Был зеленым, станет синим) */
+.partner-info {
+    background-color: #e3f2fd; /* Светло-голубой фон */
+    border-left: 4px solid #2196f3; /* Ярко-синий акцент */
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+    color: #0d47a1; /* Темно-синий текст */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Обновленные стили для блока контактов */
+.buy-contacts {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #334155;
+}
+
+.buy-contacts p {
+    margin-bottom: 10px;
+}
+
+/* Обертка для списка телефонов */
+.phone-list {
+    display: inline-flex; /* Или flex, если хотите с новой строки весь блок */
+    flex-wrap: wrap; /* Разрешаем перенос */
+    gap: 10px; /* Отступы между номерами */
+}
+
+/* Стилизация каждого номера */
+.phone-item {
+    white-space: nowrap; /* Запрещаем разрыв самого номера */
+    font-weight: 600;
+    color: #334155;
+}
+
+.custom-shops-track-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    cursor: grab; /* Курсор в виде "лапки" */
+    user-select: none; /* Чтобы текст не выделялся при перетаскивании */
+}
+
+
+/* ПОИСК */
+.search-block {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 50px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.search-form { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+.search-input-wrapper { position: relative; flex-grow: 1; }
+
+#cityInput {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    color: #333;
+}
+.search-input:focus { border-color: #3b82f6; /* Синий при фокусе */ }
+
+.search-btn {
+    background-color: #3b82f6; /* Синяя кнопка */
+    color: #ffffff;
+    font-weight: 600;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 16px;
+}
+.search-btn:hover { background-color: #2563eb; }
+.search-btn:active { transform: scale(0.98); }
+
+/* Выпадающий список */
+.city-dropdown {
+    position: absolute;
+    top: 105%; left: 0; width: 100%;
+    max-height: 280px; overflow-y: auto;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    list-style: none; padding: 5px 0; margin: 0;
+    z-index: 100; display: none;
+}
+.city-dropdown.show { display: block; animation: fadeIn 0.2s ease-out; }
+
+.city-dropdown li {
+    padding: 12px 20px; cursor: pointer;
+    color: #334155; font-size: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.1s;
+}
+.city-dropdown li:last-child { border-bottom: none; }
+.city-dropdown li:hover { background-color: #eff6ff; color: #2563eb; }
+
+/* Красивый скроллбар */
+.city-dropdown::-webkit-scrollbar { width: 6px; }
+.city-dropdown::-webkit-scrollbar-track { background: #f8fafc; border-radius: 0 8px 8px 0; }
+.city-dropdown::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+.city-dropdown::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.city-dropdown { scrollbar-color: #cbd5e1 #f8fafc; scrollbar-width: thin; }
+
+/* СЛАЙДЕР МАГАЗИНОВ */
+.custom-shops-slider {
+    position: relative; max-width: 100%; margin: 0 auto; padding-bottom: 40px;
+}
+.custom-shops-track-container { overflow: hidden; width: 100%; padding: 10px 0 20px 0; } /* Padding для тени */
+.custom-shops-track { display: flex; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); width: 100%; }
+
+.custom-shop-slide {
+    flex-shrink: 0; width: 33.333%;
+    box-sizing: border-box; padding: 0 12px;
+}
+
+.shop-card {
+    background: #fff;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    height: 100%;
+    display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.shop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border-color: #bfdbfe; /* Легкая синяя обводка при наведении */
+}
+
+.shop-title {
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 20px; color: #1e293b;
+    min-height: 48px; line-height: 1.4;
+}
+
+.shop-info-row {
+    display: flex; justify-content: space-between;
+    margin-bottom: 12px; font-size: 14px; color: #64748b;
+    border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;
+}
+.shop-value { text-align: right; font-weight: 500; color: #334155; }
+.shop-value a { color: #3b82f6; text-decoration: none; font-weight: 600; }
+.shop-value a:hover { text-decoration: underline; }
+
+/* Точки */
+.custom-slider-dots { display: flex; justify-content: center; margin-top: 10px; gap: 8px; }
+.custom-dot {
+    width: 10px; height: 10px;
+    background-color: #cbd5e1;
+    border-radius: 50%; cursor: pointer;
+    transition: all 0.3s;
+}
+.custom-dot.active { background-color: #3b82f6; transform: scale(1.3); }
+
+/* Анимация появления */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Адаптив */
+@media (max-width: 992px) { .custom-shop-slide { width: 50%; } }
+@media (max-width: 600px) {
+    .custom-shop-slide { width: 100%; }
+    .search-form { flex-direction: column; }
+    .search-btn { width: 100%; }
+    .phone-list {
+        display: flex; /* На мобильном делаем блочным */
+        flex-direction: column; /* Выстраиваем в столбик */
+        gap: 5px; /* Меньше отступ */
+        margin-top: 5px;
+    }
+
+    .buy-contacts strong {
+        display: block; /* Слово "Телефоны:" на отдельной строке */
+        margin-bottom: 5px;
+    }
+}

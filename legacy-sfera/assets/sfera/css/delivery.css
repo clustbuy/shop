@@ -1,0 +1,118 @@
+/* Общий контейнер */
+.delivery-page {
+    font-family: 'Onest', sans-serif;
+    color: #333333;
+    padding-top: 50px;
+    padding-bottom: 90px;
+    /*background-color: #ffffff; !* Или #f9f9f9 если фон серый *!*/
+}
+
+/* Заголовок страницы */
+.delivery-page h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #0d0d0d;
+    text-align: left;
+}
+
+/* Основной блок контента (карточка) */
+.delivery-card {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Очень легкая тень */
+    /*max-width: 1000px; !* Чтобы не растягивалось на 4к мониторах *!*/
+}
+
+/* Подзаголовки внутри текста */
+.delivery-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px; /* Отступ сверху для разделения блоков */
+    margin-bottom: 15px;
+    color: #0d0d0d;
+}
+
+.delivery-content h3:first-child {
+    margin-top: 0;
+}
+
+/* Обычный текст */
+.delivery-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #4a4a4a; /* Чуть мягче черного */
+}
+
+/* Списки */
+.delivery-content ul {
+    list-style: none; /* Убираем стандартные точки */
+    padding-left: 0;
+    margin-bottom: 24px;
+}
+
+.delivery-content li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Кастомные маркеры списка (синие точки) */
+.delivery-content li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px; /* Центрируем по первой строке */
+    width: 6px;
+    height: 6px;
+    background-color: #2f67d0; /* Ваш фирменный цвет */
+    border-radius: 50%;
+}
+
+/* Ссылки */
+.delivery-content a {
+    color: #2f67d0;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(47, 103, 208, 0.2);
+    transition: all 0.2s ease;
+}
+
+.delivery-content a:hover {
+    color: #1a4fa0;
+    border-bottom-color: #1a4fa0;
+}
+
+/* Важный текст (жирный) */
+.delivery-content strong {
+    font-weight: 700;
+    color: #000;
+}
+
+/* Блок с примечанием (серый фон) */
+.delivery-note {
+    background-color: #f8f9fb;
+    border-left: 4px solid #2f67d0;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-top: 30px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .delivery-card {
+        padding: 20px;
+        box-shadow: none; /* На мобилках можно убрать тень */
+        border: none;
+    }
+    .delivery-page {
+        padding-top: 20px;
+    }
+}

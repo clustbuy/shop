@@ -1,0 +1,80 @@
+/* Основной контейнер страницы */
+.order-page {
+    font-family: 'Onest', sans-serif;
+    color: #333333;
+    /*background-color: #ffffff; !* Или #f9f9f9 если фон серый *!*/
+    padding-top: 50px;
+    padding-bottom: 90px;
+}
+
+/* Заголовок страницы (h1) */
+.order-page h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #0d0d0d;
+    text-align: left;
+}
+
+/* Карточка с контентом */
+.order-card {
+    background: #ffffff;
+    border: 1px solid #eeeeee; /* Тонкая рамка */
+    border-radius: 12px; /* Скругленные углы */
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Мягкая тень для объема */
+    /*max-width: 900px; !* Оптимальная ширина для чтения *!*/
+}
+
+/* Стили текста */
+.order-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: #4a4a4a;
+}
+
+/* Ссылки */
+.order-content a {
+    color: #2f67d0; /* Ваш синий */
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(47, 103, 208, 0.2);
+    transition: all 0.2s ease;
+}
+
+.order-content a:hover {
+    color: #1a4fa0;
+    border-bottom-color: #1a4fa0;
+}
+
+/* Выделение важных моментов (сумма 300 руб и т.д.) */
+.order-content strong {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Блок примечания внизу (где ссылка на доставку) */
+.order-note {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eeeeee;
+    font-size: 15px;
+    color: #666;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .order-page {
+        padding-top: 20px;
+    }
+    .order-card {
+        padding: 20px;
+        box-shadow: none;
+        border: none;
+    }
+    .order-page h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+}

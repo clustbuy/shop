@@ -1,0 +1,234 @@
+/* Страница входа */
+.login-page {
+    padding: 60px 0;
+    min-height: calc(100vh - 200px);
+    background: #f5f5f5;
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Карточки */
+.login-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #0d0d0d;
+}
+
+/* Заголовки формы */
+.login-header {
+    margin-bottom: 30px;
+}
+
+.login-header h1,
+.login-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #0d0d0d;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Форма */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0d0d0d;
+}
+
+.form-input {
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #FBC100;
+}
+
+.form-input::placeholder {
+    color: #999999;
+}
+
+/* Кнопки */
+.btn-full {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+/* Сообщения */
+.sms-message {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.sms-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.sms-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.modal-help-text {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sms-resend-info {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.sms-resend-info a {
+    color: #FBC100;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sms-resend-info a:hover {
+    text-decoration: underline;
+}
+
+/* Преимущества */
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.benefits-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.benefits-list svg {
+    flex-shrink: 0;
+    stroke: #FBC100;
+    stroke-width: 2;
+    fill: none;
+    margin-top: 2px;
+}
+
+.benefits-list strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0d0d0d;
+    margin-bottom: 4px;
+}
+
+.benefits-list p {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .login-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .login-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .login-page {
+        padding: 30px 0;
+    }
+    
+    .login-card {
+        padding: 24px;
+    }
+    
+    .login-header h1,
+    .login-header h2 {
+        font-size: 20px;
+    }
+}
+
+/* Табы */
+.contact-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    background: #f5f5f5;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background: #FBC100;
+    border-color: #FBC100;
+    color: #fff;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #e8e8e8;
+}

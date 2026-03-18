@@ -1,0 +1,14 @@
+/import_files
+/sql
+/vendor
+/README.md
+/.idea
+/backups
+/chrome-extensions
+/docs
+/scripts
+/site/libs/config.php
+/site/libs/smarty/templates_c
+/o_images
+/permissions_class_load.log
+/permissions_debug.log

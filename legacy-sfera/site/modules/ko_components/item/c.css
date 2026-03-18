@@ -1,0 +1,852 @@
+/*//======================================================////
+////																											////
+////          CSS KO-компонента товарной позиции 	        ////
+////																										  ////
+////======================================================////
+Оглавление
+
+	0. Общие стили, использующиеся в нескольких местах
+	1. Стили представления для главной и каталогов
+	2. Стили представления для карточки товара
+	3. Стили представления конструктора тов.позиций в корзине
+	4. Стили представления для доп.тов.позиций
+
+
+////========================================================//*/
+
+
+/*//////////////////////////////////////////////////////////
+////                                                    ////
+//// 0. Общие стили, использующиеся в нескольких местах ////
+////                                                    ////
+//////////////////////////////////////////////////////////*/
+
+	/*// Прочее ////
+	//////////////*/
+
+
+/*//////////////////////////////////////////////////////
+////                                                ////
+//// 1. Стили представления для главной и каталогов ////
+////                                                ////
+//////////////////////////////////////////////////////*/
+
+	/*// 1. Общие стили ////
+	//////////////////////*/
+	.item-content {
+
+	}
+
+	/*// 2. Стили панели выбора доп.ингредиентов ////
+	///////////////////////////////////////////////*/
+	.item-content .ingredients {
+		position: relative;
+	}
+	.item-content .ingredients .item-popup.additional-toppings-choose-panel {
+		display: block;
+		top: 25px;
+    left: calc(50% - 108px);
+	}
+
+	/*// 3. Коррекция стилей owl-wrapper ////
+	///////////////////////////////////////*/
+	.owl-wrapper-outer {
+		padding: 20px 0 0;
+    margin: -20px 0 0;
+		overflow: inherit !important;
+	}
+	.owl-wrapper-outer .owl-wrapper {
+		opacity: 1;
+		transition: all .5s ease;
+	}
+	.owl-wrapper-outer .owl-wrapper .hidden {
+		opacity: 0;
+		transition: all .5s ease;
+	}
+	.owl-wrapper-outer .owl-wrapper .active {
+		opacity: 1;
+		transition: all .5s ease;
+	}
+
+	/*/ 4. Кнопка закрытия панели выбора ингредиентов ////
+	////////////////////////////////////////////////////*/
+	.item-content .ingredients .close-btn-wrapper {
+		text-align: center;
+	}
+	.item-content .ingredients .close-btn {
+		display: inline-block;
+		line-height: 30px;
+    font-size: 1.1em;
+		height: 30px;
+		width: 100%;
+    border: 1px solid #eaeaea;
+    float: left;
+    position: relative;
+    cursor: pointer;
+		margin: 15px 0 10px 0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+	}
+	.item-content .ingredients .close-btn:hover {
+    background: #f0f0f0;
+	}
+
+	.item-content .ingredients .close-btn span {
+    position: relative;
+    border-bottom: 1px dotted #ccc;
+	}
+	.item-content .ingredients .item-popup .price {
+		height: 18px;
+	}
+
+	/*// 5. Коррекция стилей выбора размеров пиццы ////
+	/////////////////////////////////////////////////*/
+	.item-content .size-choose-block {
+		height: 84px;
+    border: 1px solid #f5f5f5;
+    border-radius: 6px;
+	}
+	.item-content .size-choose-block .size {
+		height: 28px;
+		margin: 0 !important;
+		max-width: none !important;
+	}
+
+	/*// 6. Коррекция стилей выбора соуса ////
+	////////////////////////////////////////*/
+	.item-content .sauce-choose-block {
+		margin-top: 20px;
+		height: 28px;
+	}
+	.item-content .sauce-choose-block select {
+		width: 180px;
+    height: 26.4px;
+    border-radius: 3px;
+    background-color: #fafafa;
+    border: 1px solid #f3f3f3;
+    padding-left: 6px;
+		font-style: italic;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.item-content .jq-selectbox {
+		border-radius: 3px !important;
+		border-bottom-color: #f3f3f3 !important;
+		min-width: 70% !important;
+	}
+	.item-content .jq-selectbox__dropdown {
+		border-radius: 3px !important;
+		border-top-color: #f3f3f3 !important;
+	}
+	.item-content .jq-selectbox__dropdown ul li:last-of-type {
+		border-radius: 3px !important;
+	}
+
+	/*// 7. Стили для кол-ва штук в 1-й единице товара ////
+	/////////////////////////////////////////////////////*/
+	.item-content .item-parts-count {
+		text-align: center;
+	}
+	.item-content .item-parts-count span {
+    font: 13px/16px Arial,Helvetica,sans-serif;
+    color: #8c8c8c;
+	}
+
+	/*// 8. Коррекция стилей панели итогов ////
+	/////////////////////////////////////////*/
+	.price-box .less-more .amount {
+		min-height: 32px;
+	}
+
+	/*// 9. Модальный щит для блокировки функционала скрытых тов.позиций (с visibility: hidden)  ////
+	///////////////////////////////////////////////////////////////////////////////////////////////*/
+	.owl-item:not(.active) .item-content .modal-shield4items {
+		position: absolute; top: 0; left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+	}
+
+	/*// 10. Коррекция стилей модального окна с id == callback ////
+	/////////////////////////////////////////////////////////////*/
+	#callback {
+		z-index: 1001 !important;
+		position: absolute !important;
+		left: 50% !important;
+		margin-left: -143px !important;
+	}
+
+
+
+/*//////////////////////////////////////////////////
+////                                    ////
+//// 2. Стили представления для карточки товара ////
+////                                    ////
+//////////////////////////////////////////////////*/
+
+	/*----------------//
+	// 1. Общие стили //
+	//----------------*/
+
+		/* Стили item */
+		.item-model-cont .item {
+			width: 100%;
+			border: 0;
+		}
+		.item-model-cont .item .item-content {
+		  margin: 0;
+		}
+		.item-model-cont .item-content {
+			width: 100%;
+			max-width: 100%;
+		}
+		.item-model-cont .pdp-text .tabs-wrap>span {
+			line-height: 20px;
+		}
+
+		/* Стили табов для выбора теста */
+		.item-model-cont .item .tabs-wrap ul {
+			display: inline-block;
+		}
+		.item-model-cont .item .tabs-wrap ul li {
+			width: auto !important;
+			min-width: 87px;
+			cursor: pointer;
+			margin-right: 10px !important;
+			margin-top: 10px !important;
+			margin-left: 0 !important;
+			border-radius: 4px !important;
+		}
+	  .item-model-cont .item .tabs-wrap ul li a {
+			width: auto !important;
+			min-width: 87px;
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+		}
+		.item-model-cont .item .tabs-wrap ul li a {
+			border-radius: 4px !important;
+			line-height: 30px !important;
+		}
+
+		/* Стили выбора соуса */
+		.item-model-cont .item .choose-sauce-wrapper {
+
+		}
+		.item-model-cont .item .choose-sauce-wrapper>span {
+			/*width: 100%;*/
+			display: block;
+			float: none;
+		}
+		.item-model-cont .item .choose-sauce-wrapper ul li {
+			border: 1px dashed #dbdbdb;
+		}
+		.item-model-cont .item .choose-sauce-wrapper ul li.active {
+			border: 1px solid #dbdbdb;
+			font-weight: normal;
+		}
+		.item-model-cont .item .choose-sauce-wrapper>span>span {
+			/*vertical-align: middle;*/
+			/*padding-right: 5px;*/
+		}
+		.item-model-cont .item .choose-sauce-wrapper>span>em {
+			/*vertical-align: middle;*/
+		}
+		.item-model-cont .item .choose-sauce-wrapper ul li a {
+			line-height: 30px !important;
+			border: 0;
+			font-weight: normal;
+		}
+
+		/* Стили итоговой цены */
+		.item-model-cont .item .total-price {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.item-model-cont .item .total-price .add-weight {
+			top: -15px;
+		}
+
+	/*------------------------------------------------//
+	// 2. Стили кнопки вызова панели доп.ингредиентов //
+	//------------------------------------------------*/
+	.item-model-cont .item .more {
+		display: inline-block;
+		vertical-align: top;
+		box-shadow: 0 3px 0 0 #e6e6e6;
+		cursor: pointer;
+		color: #000;
+		border: 1px solid #e6e6e6;
+		border-bottom-color: #f7f7f7;
+		background: #fff;
+		background: -moz-linear-gradient(top,#fff 0,#eee 100%);
+		background: -webkit-linear-gradient(top,#fff 0,#eee 100%);
+		background: linear-gradient(to bottom,#fff 0,#eee 100%);
+		font: 700 15px/15px 'Roboto Slab','Times New Roman',serif;
+		padding: 0;
+		width: 18px;
+		border-radius: 5px;
+	}
+	.item-model-cont .item .more:hover:hover {
+		border-color: #ff8f52;
+		background: #ff8f52;
+		background: -moz-linear-gradient(top,#ff8f52 0,#e6573b 100%);
+		background: -webkit-linear-gradient(top,#ff8f52 0,#e6573b 100%);
+		background: linear-gradient(to bottom,#ff8f52 0,#e6573b 100%);
+	}
+	.item-model-cont .item .more:hover {
+		box-shadow: 0 3px 0 0 #b15241;
+		cursor: pointer;
+		color: #fff;
+		border: 1px solid #ea7045;
+		background: #ea7045;
+		background: -moz-linear-gradient(top,#ea7045 0,#df4c30 100%);
+		background: -webkit-linear-gradient(top,#ea7045 0,#df4c30 100%);
+		background: linear-gradient(to bottom,#ea7045 0,#df4c30 100%);
+		font: 15px/15px 'Roboto Slab','Times New Roman',serif;
+		padding: 0;
+		width: 18px;
+		border-radius: 5px;
+	}
+	.item-model-cont .item .more:hover:active{position:relative;top:3px;border-color:#cc471c;box-shadow:0 0 20px 0 #a63019 inset}
+
+	.item-model-cont .item .more>.plus {
+		background: url(/images/ico-plus.svg) 50% 50% no-repeat;
+		background-size: 8px 8px;
+		display: block;
+		padding: 8px 7px 7px;
+	}
+	.item-model-cont .item .more:active>.plus {
+		background-position: 50% 45%;
+	}
+	.item-model-cont .item .more:hover>.plus {
+		background: url(/images/ico-plus2.svg) 50% 50% no-repeat;
+		background-size: 8px 8px;
+	}
+	.item-model-cont .item .more.active:before{bottom:-7px;left:50%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;z-index:7}
+
+	/*---------------------------//
+	// 3. Стили выбора топпингов //
+	//---------------------------*/
+
+		/* 3.1. Общие стили //
+		//------------------*/
+		.item-model-cont .item .toppings-choose {
+			position: relative;
+		}
+		.item-model-cont .item .toppings-choose .no-additional-ingrs {
+			padding: 5px 0 5px 15px;
+    	font-style: italic;
+			font: 13px/20px Arial,Helvetica,sans-serif;
+		}
+		.item-model-cont .item .toppings-choose .no-additional-ingrs span {
+			line-height: 35px;
+			font-style: italic;
+		}
+
+		/* 3.2. Заголовок и кнопка //
+		//-------------------------*/
+		.item-model-cont .item .toppings-choose>span {
+			width: 100%;
+		}
+		.item-model-cont .item .toppings-choose>span>span {
+			vertical-align: middle;
+			padding-right: 5px;
+		}
+		.item-model-cont .item .toppings-choose>span>em {
+			vertical-align: middle;
+		}
+
+		/* 3.3. Выбранные топпинги //
+		//-------------------------*/
+		.item-model-cont .item .toppings-choose .choosen_topping {
+			display: inline-block;
+			padding-right: 5px;
+			background: #a9b238;
+			padding: 0 5px;
+			margin-top: 5px;
+			border-radius: 4px;
+			color: #fff;
+		}
+		.item-model-cont .item .toppings-choose .choosen_topping span:nth-child(1) {
+			font-weight: bold;
+		}
+		.item-model-cont .item .toppings-choose .choosen_topping .remove-additional {
+			width: 8px;
+			height: 8px;
+			text-indent: -9999px;
+			overflow: hidden;
+			display: inline-block;
+			vertical-align: top;
+			margin: 6px 0 0 7px;
+			background: url(/images/ico-remove-add.svg) no-repeat;
+			background-size: 100% 100%;
+			cursor: pointer;
+		}
+
+		/* 3.4. Стили кнопки закрытия панели ингредиентов //
+		//------------------------------------------------*/
+		.item-model-cont .item .close-btn{float:right;box-shadow:0 3px 0 0 #e6e6e6;cursor:pointer;font:400 14px/32px 'Roboto Slab','Times New Roman',serif;color:#000;border:1px solid #e6e6e6;border-bottom-color:#f7f7f7;background:#fff;background:-moz-linear-gradient(top,#fff 0,#eee 100%);background:-webkit-linear-gradient(top,#fff 0,#eee 100%);background:linear-gradient(to bottom,#fff 0,#eee 100%);padding:0;width:100%;text-align:center;border-radius:8px;margin:10px 0 15px 0;}
+		.item-model-cont .item .close-btn:hover{border-bottom-color:#f3f3f3;background:#fff;background:-moz-linear-gradient(top,#fff 0,#e6e6e6 100%);background:-webkit-linear-gradient(top,#fff 0,#e6e6e6 100%);background:linear-gradient(to bottom,#fff 0,#e6e6e6 100%)}
+		.item-model-cont .item .close-btn:active{position:relative;top:3px;border-color:#e6e6e6;box-shadow:0 0 20px 0 #e6e6e6 inset}
+
+
+	/*-----------------------------------------//
+	// 4. Стили панели выбора доп.ингредиентов //
+	//-----------------------------------------*/
+	.item-model-cont .item .toppings-choose .item-popup.additional-toppings-choose-panel {
+		display: block;
+		top: 0px;
+    left: -243px;
+	}
+	@media screen and (max-width:768px){
+		.item-model-cont .item .toppings-choose .item-popup.additional-toppings-choose-panel {
+			left: 50%;
+			margin-left: -125px;
+			top: 30px;
+		}
+	}
+
+	/*----------------------------------//
+	// 5. Стили панели пищевой ценности //
+	//----------------------------------*/
+	.item-model-cont .holder {
+		margin-bottom: 10px;
+	}
+	@media screen and (max-width:9999999px){
+		.item-model-cont .holder.nutritional .col {
+			width: 100%;
+			padding: 0 30px 8px 0;
+		}
+	}
+	@media screen and (max-width:768px){
+		.item-model-cont .holder.nutritional .col {
+			padding: 0;
+		}
+	}
+
+	/*------------------------------//
+	// 6. Стили панели выбора теста //
+	//------------------------------*/
+	.item-model-cont .item .tabs-wrap.dough-choose span {
+		display: block;
+		float: none;
+	}
+	.item-model-cont .item .tabs-wrap.dough-choose span span {
+
+	}
+	.item-model-cont .item .tabs-wrap.dough-choose ul li {
+		border: 1px dashed #dbdbdb;
+	}
+	.item-model-cont .item .tabs-wrap.dough-choose ul li.active {
+		border: 1px solid #dbdbdb;
+		font-weight: normal;
+	}
+	.item-model-cont .item .tabs-wrap.dough-choose ul li a {
+		border: 0 !important;
+	}
+
+	/*--------------------------------//
+	// 7. Стили панели выбора размера //
+	//--------------------------------*/
+	.item-model-cont .item .size-wrap>span {
+	  display: block;
+	  margin: 16px 0 0;
+		float: none;
+	}
+	.item-model-cont .item .size-wrap>ul {
+		display: inline-block;
+	}
+	.item-model-cont .item .size-wrap>ul>li {
+		margin-top: 10px;
+		margin-right: 10px;
+		width: 75px;
+	}
+	.item-model-cont .item .size-wrap>ul>li>a {
+		width: auto;
+	}
+
+	/*----------------------------//
+	// 8. Стили подведения итогов //
+	//----------------------------*/
+	.item-model-cont .item .item-content .my-price-box {
+		background: #f5f5f5;
+    border-radius: 4px;
+    padding: 39px 35px 37px;
+		font-size: 14px;
+    line-height: 21px;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .holder:after {
+			clear: both;
+			content: "";
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder:first-child {
+    padding-bottom: 5px;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder:after, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+		display: block;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .price {
+		font: 700 36px/36px 'Roboto Slab','Times New Roman',serif;
+    position: relative;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .price .rub {
+		font-weight: 400;
+		display: inline-block;
+		line-height: 9px;
+		width: .6em;
+		border-bottom: 2px solid #000;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .price .add-weight {
+		font: 13px/16px Arial,Helvetica,sans-serif;
+		color: #8c8c8c;
+		position: absolute;
+		top: -14px;
+		left: 0;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .less-more {
+		float: right;
+		display: block;
+		font: 700 16px/36px Arial,Helvetica,sans-serif;
+    color: #000;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .less-more>a.minus {
+		border-radius: 10px 0 0 10px;
+		line-height: 30px;
+		padding: 0 4.5px;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .less-more>a {
+		box-shadow: 0 3px 0 0 #e6e6e6;
+		border-radius: 50%;
+		cursor: pointer;
+		font: 400 14px/32px 'Roboto Slab','Times New Roman',serif;
+		color: #000;
+		border: 1px solid #e6e6e6;
+		border-bottom-color: #f7f7f7;
+		background: #fff;
+		background: -moz-linear-gradient(top,#fff 0,#eee 100%);
+		background: -webkit-linear-gradient(top,#fff 0,#eee 100%);
+		background: linear-gradient(to bottom,#fff 0,#eee 100%);
+		float: left;
+		padding: 0 10px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .less-more .amount {
+		box-shadow: 0 3px 0 0 #e6e6e6;
+		cursor: pointer;
+		color: #000;
+		padding: 0;
+		margin: 0;
+		background: #fff;
+		border: 0;
+		border-top: 1px solid #e6e6e6;
+		width: 36px;
+		border-radius: 0;
+		text-align: center;
+		float: left;
+		font: 700 16px/31px Arial,Helvetica,sans-serif;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .less-more>a.plus {
+		border-radius: 0 10px 10px 0;
+		line-height: 30px;
+		padding: 0 4.5px;
+	}
+	.item-model-cont .item .item-content .my-price-box>.holder .less-more>a {
+		box-shadow: 0 3px 0 0 #e6e6e6;
+		border-radius: 50%;
+		cursor: pointer;
+		font: 400 14px/32px 'Roboto Slab','Times New Roman',serif;
+		color: #000;
+		border: 1px solid #e6e6e6;
+		border-bottom-color: #f7f7f7;
+		background: #fff;
+		background: -moz-linear-gradient(top,#fff 0,#eee 100%);
+		background: -webkit-linear-gradient(top,#fff 0,#eee 100%);
+		background: linear-gradient(to bottom,#fff 0,#eee 100%);
+		float: left;
+		padding: 0 10px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+	.item-model-cont .item .item-content .my-price-box .btn {
+		float: right;
+		box-shadow: 0 3px 0 0 #b15241;
+		border-radius: 10px;
+		cursor: pointer;
+		font: 400 14px/32px 'Roboto Slab','Times New Roman',serif;
+		color: #fff;
+		border: 1px solid #ea7045;
+		background: #ea7045;
+		background: -moz-linear-gradient(top,#ea7045 0,#df4c30 100%);
+		background: -webkit-linear-gradient(top,#ea7045 0,#df4c30 100%);
+		background: linear-gradient(to bottom,#ea7045 0,#df4c30 100%);
+		padding: 0;
+		text-align: center;
+		line-height: 41px;
+		font-size: 17px;
+		width: 100%;
+    margin: 20px 0 0;
+	}
+	.item-model-cont .item .item-content .my-price-box .btn:hover {
+		border-color: #ff8f52;
+		background: #ff8f52;
+		background: -moz-linear-gradient(top,#ff8f52 0,#e6573b 100%);
+		background: -webkit-linear-gradient(top,#ff8f52 0,#e6573b 100%);
+		background: linear-gradient(to bottom,#ff8f52 0,#e6573b 100%);
+	}
+	.item-model-cont .item .item-content .my-price-box .btn:active {
+		position: relative;
+		top: 3px;
+		border-color: #cc471c;
+		box-shadow: 0 0 20px 0 #a63019 inset;
+	}
+	.item-model-cont .item .item-content .my-price-box .one-click {
+		float: right;
+		box-shadow: 0 3px 0 0 #e6e6e6;
+		cursor: pointer;
+		font: 400 14px/32px 'Roboto Slab','Times New Roman',serif;
+		color: #000;
+		border: 1px solid #e6e6e6;
+		border-bottom-color: #f7f7f7;
+		background: #fff;
+		background: -moz-linear-gradient(top,#fff 0,#eee 100%);
+		background: -webkit-linear-gradient(top,#fff 0,#eee 100%);
+		background: linear-gradient(to bottom,#fff 0,#eee 100%);
+		padding: 0;
+		text-align: center;
+		border-radius: 8px;
+		width: 100%;
+    margin: 0;
+	}
+	.item-model-cont .item .item-content .my-price-box .one-click:hover {
+		border-bottom-color: #f3f3f3;
+		background: #fff;
+		background: -moz-linear-gradient(top,#fff 0,#e6e6e6 100%);
+		background: -webkit-linear-gradient(top,#fff 0,#e6e6e6 100%);
+		background: linear-gradient(to bottom,#fff 0,#e6e6e6 100%);
+	}
+	.item-model-cont .item .item-content .my-price-box .one-click:active {
+		position: relative;
+		top: 3px;
+		border-color: #e6e6e6;
+		box-shadow: 0 0 20px 0 #e6e6e6 inset;
+	}
+	.item-model-cont .item .item-content .my-price-box .free-delivery {
+		font-size: 14px;
+		line-height: 18px;
+		color: #8b8b8b;
+    float: none;
+    width: auto;
+    padding: 20px 0 0;
+    display: block;
+    text-align: center;
+    clear: both;
+    margin: 0 0 -10px;
+	}
+
+	/*---------------------------------//
+	// 9. Коррекция стилей owl-wrapper //
+	//---------------------------------*/
+	.additional-products .owl-wrapper-outer {
+		overflow: hidden !important;
+	}
+
+
+
+
+/*/////////////////////////////////////////////////////////////////
+////                                    ////
+//// 3. Стили представления конструктора тов.позиций в корзине ////
+////                                    ////
+/////////////////////////////////////////////////////////////////*/
+
+	/*----------------//
+	// 1. Общие стили //
+	//----------------*/
+	.modal-window-constructor {
+		color: inherit !important;
+		font: inherit !important;
+		padding: 30px 14px 5px !important;
+		z-index: 999 !important;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor {
+
+	}
+	.modal-window-constructor .item-content {
+		margin: 0;
+		text-align: center !important;
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	/*-----------------------//
+	// 2. Стили выбора соуса //
+	//-----------------------*/
+	.modal-window-constructor .constructor-wrapper .constructor .choose-sauce-wrapper {
+
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .choose-sauce-wrapper>span {
+		/*width: 100%;*/
+		display: block;
+		float: none;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .choose-sauce-wrapper ul li {
+		border: 1px dashed #dbdbdb;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .choose-sauce-wrapper ul li.active {
+		border: 1px solid #dbdbdb;
+		font-weight: normal;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .choose-sauce-wrapper>span>span {
+		/*vertical-align: middle;*/
+		/*padding-right: 5px;*/
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .choose-sauce-wrapper>span>em {
+		/*vertical-align: middle;*/
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .choose-sauce-wrapper ul li a {
+		line-height: 30px !important;
+		border: 0;
+		font-weight: normal;
+	}
+
+	/*-------------------------------------//
+	// 3. Стили панели выбора ингредиентов //
+	//-------------------------------------*/
+	.modal-window-constructor .constructor-wrapper .constructor .additional-toppings-choose-panel {
+		position: relative;
+    margin: 0 0 15px 0;
+		border: 0;
+    box-shadow: none;
+		z-index: 0;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .item-popup {
+		width: 100%;
+	}
+
+	/*----------------------------------------------------//
+	// 4. Кнопка закрытия панели конструктора тов.позиций //
+	//----------------------------------------------------*/
+	.modal-window-constructor .constructor-wrapper .constructor .close-btn-wrapper {
+		text-align: center;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .close-btn {
+		display: inline-block;
+		line-height: 30px;
+    font-size: 1.1em;
+		height: 30px;
+		width: 99%;
+    border: 1px solid #eaeaea;
+    float: left;
+    position: relative;
+    cursor: pointer;
+		margin: 0 0 10px 0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .close-btn:hover {
+    background: #f0f0f0;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .close-btn span {
+    position: relative;
+    border-bottom: 1px dotted #ccc;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .item-popup .price {
+		height: 18px;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .total-price {
+		top: 0 !important;
+    position: relative;
+    left: -33px;
+    overflow: visible;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .total-price .add-weight {
+		left: 5px;
+	}
+	.modal-window-constructor .constructor-wrapper .constructor .price-box {
+		border: 0;
+	}
+
+	/*-------------------------------------------//
+	// 5. Коррекция стилей выбора размеров пиццы //
+	//-------------------------------------------*/
+	.item-content .size-choose-block {
+		margin-top: 15px;
+	}
+
+	/*----------------------------------//
+	// 6. Коррекция стилей выбора теста //
+	//----------------------------------*/
+	.item-content .tabs {
+		margin-top: 16px;
+	}
+
+
+
+
+/*//////////////////////////////////////////////////
+////                                            ////
+//// 4. Стили представления для доп.тов.позиций ////
+////                                            ////
+//////////////////////////////////////////////////*/
+
+	/*---------------------------------//
+	// 1. Коррекция стилей total-price //
+	//---------------------------------*/
+	.add_prod_item .total-price {
+		margin: 0 0 7px !important;
+	}
+
+	/*-----------//
+	// 2. Кнопка //
+	//-----------*/
+	.add_prod_item .btn-wrapper {
+		text-align: center;
+		margin-top:10px;
+		margin-bottom:20px;
+	}
+	.add_prod_item .btn-wrapper .btn {
+		display: inline-block;
+		box-shadow: 0 3px 0 0 #b15241;
+		border-radius: 10px;
+		cursor: pointer;
+		font: 400 14px/32px 'Roboto Slab','Times New Roman',serif;
+		color: #fff;
+		border: 1px solid #ea7045;
+		background: #ea7045;
+		background: -moz-linear-gradient(top,#ea7045 0,#df4c30 100%);
+		background: -webkit-linear-gradient(top,#ea7045 0,#df4c30 100%);
+		background: linear-gradient(to bottom,#ea7045 0,#df4c30 100%);
+		padding: 0;
+		text-align: center;
+		line-height: 41px;
+		font-size: 17px;
+		width: 100%;
+    margin: 20px 0 0;
+	}
+	.add_prod_item .btn-wrapper .btn:hover {
+		border-color: #ff8f52;
+		background: #ff8f52;
+		background: -moz-linear-gradient(top,#ff8f52 0,#e6573b 100%);
+		background: -webkit-linear-gradient(top,#ff8f52 0,#e6573b 100%);
+		background: linear-gradient(to bottom,#ff8f52 0,#e6573b 100%);
+	}
+	.add_prod_item .btn-wrapper .btn:active {
+		position: relative;
+		top: 3px;
+		border-color: #cc471c;
+		box-shadow: 0 0 20px 0 #a63019 inset;
+	}
+
+	/*--------------------------//
+	// 3. Коррекция стилей item //
+	//--------------------------*/
+	.additional-products .item {
+		margin: 0;
+	}

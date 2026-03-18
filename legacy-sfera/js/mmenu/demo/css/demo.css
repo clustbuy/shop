@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, Verdana;
+    font-size: 16px;
+    line-height: 22px;
+    color: #666;
+    position: relative;
+    -webkit-text-size-adjust: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1em 0;
+    font-size: 22px;
+}
+p {
+    margin: 1em 0;
+}
+a,
+a:link,
+a:active,
+a:visited,
+a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+nav:not(.mm-menu) {
+    display: none;
+}
+
+/* Для десктопов */
+@media (min-width: 768px) {
+    #header {
+        position: sticky;
+        top: 0px;
+        height: 50px;
+        padding: 0 100%;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 44px;
+        text-align: center;
+        left: 0;
+        background: #03989e;
+    }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 767px) {
+    #header {
+        position: fixed;
+        height: 50px;
+        padding: 0 100%;
+        top: 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 44px;
+        text-align: center;
+        background: #03989e;
+        left: 0;
+        transform: translateZ(0);
+    }
+}
+
+
+#header a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 50px;
+    padding: 15px 25px;
+}
+#header a:before,
+#header a:after {
+    content: "";
+    display: block;
+    background: #fff;
+    height: 2px;
+}
+#header a span {
+    background: #fff;
+    display: block;
+    height: 2px;
+    margin: 7px 0;
+}
+
+#content {
+    /*padding: 150px 50px 50px 50px;
+    text-align: center;*/
+}

@@ -1,0 +1,1 @@
+~~include file="market/tpl/`$smarty.const.TPL`/stickyContainer.tpl"~

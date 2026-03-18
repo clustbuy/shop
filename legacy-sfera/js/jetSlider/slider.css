@@ -1,0 +1,32 @@
+.jet-slider {
+  overflow: hidden;
+  position: relative;
+}
+.jet-slider .jet-slider-frames {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jet-slider .jet-slider-frames li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.jet-slider .jet-slider-indicator {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.jet-slider .jet-slider-indicator li {
+  float: left;
+}
+.jet-slider .jet-slider-indicator a {
+  display: block;
+}
