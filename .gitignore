@@ -1,6 +1,7 @@
 # OpenServer / временные файлы
-.osp/
-site/libs/smarty/templates_c/
+/.osp
+/site/libs/smarty/templates_c
+/vendor
 *.log
 /logs/
 /temp/
