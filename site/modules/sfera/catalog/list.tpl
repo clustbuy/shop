@@ -1,6 +1,6 @@
 <div class="catalog-section">
 
-    <h1>~~$page_title~~</h1>
+    <h1>~~$page_title~</h1>
 
     <div class="catalog-header">
         <div class="filters">
@@ -24,9 +24,9 @@
 
     <div class="products-grid">
 
-    ~~foreach from=$goods item=good~~
-        ~~include file="catalog/card.tpl" good=$good~~
-    ~~/foreach~~
+    ~~foreach from=$goods item=good~
+        ~~include file="catalog/card.tpl" good=$good~
+    ~~/foreach~
 
     </div>
 
