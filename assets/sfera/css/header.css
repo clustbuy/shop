@@ -1,6 +1,115 @@
 /* Header Styles */
 
 /* Header */
+nav[role="navigation"] {
+            width: 100%;
+            background: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main_menu {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0;
+            border-collapse: collapse;
+            background: none;
+        }
+
+        #main_menu td {
+            padding: 10px 15px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        #main_menu td a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+.floating_header {
+            --big_tm_size: 100px;
+            --blue: #49A4DC;
+            --black: #111;
+            --mg-blue: #49A4DC;
+            --dark-blue: #005b94;
+            --light-blue: #76C1EE;
+            --light-blue2: #96CDEE;
+            --bg-blue: #EBF1F4;
+            --medium-blue: hsl(203deg 85% 42%);
+            font: 16px Graphik, sans-serif;
+            color: #404040;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            height: 110px;
+            background: linear-gradient(to bottom, #fffe, #fffe);
+            position: fixed;
+            width: 100%;
+            z-index: 120;
+            box-shadow: 0 2px 10px 2px rgba(0,0,0,.1), 0 1px 0 rgba(58,72,80,.08), 0 2px 4px rgba(58,72,80,.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        .floating_header .wrapper_content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            margin-top: 0;
+        }
+
+        #logo img {
+            max-width: 100%;
+            height: auto;
+            width: 200px;
+        }
+
+        #phones_holder_new {
+            flex: 1;
+            text-align: center;
+        }
+
+        #search_form {
+            margin-left: 300px;
+        }
+
+        #search_form .suggest_item {
+            border: none;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            padding: 8px 5px;
+            font-size: 14px;
+        }
+
+        #search_form input.find_button {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: none;
+            padding: 0;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        #search_form form {
+            display: inline-flex;
+            width: auto;
+            min-width: 300px;
+            background: #fff;
+            border-radius: 40px;
+            border: 1px solid #e0e0e0;
+            padding: 2px 2px 2px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
 .header {
     background: #253069;
     color: #ffffff;
