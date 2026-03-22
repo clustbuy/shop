@@ -12,6 +12,9 @@
             <div id="phones_holder_new">
                 <b>+7 495 185-09-85</b>  без&nbsp;выходных 9:00 - 23:00
             </div>
+            <a href="/profile/" class="profile-button">
+                <span>Войти</span>
+            </a>
         </div>
         <nav role="navigation">
             <table id="main_menu">
