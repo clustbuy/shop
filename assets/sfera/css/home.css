@@ -1,0 +1,110 @@
+.main {
+  background: #fff;
+}
+
+/* ===== HERO (баннер) ===== */
+
+.hero {
+  margin-bottom: 40px;
+}
+
+.hero__slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 500px;
+}
+
+.hero__slides {
+  height: 100%;
+}
+
+.hero__slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.hero__slide--active {
+  display: block;
+}
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 500px;
+  z-index: 2;
+}
+.hero__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+/* кнопки */
+.hero__prev,
+.hero__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.hero__prev {
+  left: 10px;
+}
+
+.hero__next {
+  right: 10px;
+}
+
+/* ===== PRODUCTS ===== */
+
+.products {
+  margin-bottom: 50px;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* кнопка */
+.products__more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #49A4DC;
+  color: #49A4DC;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #49A4DC;
+  color: #fff;
+}
+
+
+    
