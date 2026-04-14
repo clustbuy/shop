@@ -49,3 +49,6 @@
             </div>
         </div>
     </footer>
+
+<!-- Кнопка для чата поддержки -->
+~~include file="sfera/tpl/Support_chat.tpl"~
