@@ -122,9 +122,9 @@
 }
 </style>
 
+/* Скрипт пока не работает полностью. Потом заставлю его работать */
 <script>
 (function() {
-    // Ждём полной загрузки DOM
     function init() {
         var btn = document.getElementById('supportFloatBtn');
         var modal = document.getElementById('supportModal');
@@ -132,26 +132,19 @@
         var form = document.getElementById('supportForm');
         var statusDiv = document.getElementById('supportFormStatus');
 
-        // Открытие окна
+        // Открытие
         btn.onclick = function() {
             modal.style.display = 'flex';
         };
 
-        // Закрытие по крестику
+        // Закрытие
         if (closeSpan) {
             closeSpan.onclick = function() {
                 modal.style.display = 'none';
             };
         }
 
-        // Закрытие по клику вне окна
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        };
-
-        // Отправка формы
+        // Отправка
         if (form) {
             form.onsubmit = function(e) {
                 e.preventDefault();
@@ -184,7 +177,7 @@
         }
     }
 
-    // Если DOM уже загружен, запускаем сразу, иначе ждём
+    // Если DOM уже загружен, запускаем сразу, иначе ждём (так надо)
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
