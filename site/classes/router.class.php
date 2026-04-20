@@ -57,7 +57,7 @@ class router extends aModule{
                 // case 'login':        print ($_SESSION['smarty']->fetch('str:'.$rout.'/login'));               break;
                 case 'orders':        print ($_SESSION['smarty']->fetch('str:'.$rout.'/orders'));               break;
                 case 'favorites':        print ($_SESSION['smarty']->fetch('str:'.$rout.'/favorites'));               break;
-                case 'catalog':        print ($_SESSION['smarty']->fetch('str:'.$rout.'/catalog'));               break;
+                case 'catalog': include_once 'site/modules/catalog/catalog.class.php'; if(class_exists('catalog')){ $mod = new catalog(); print $mod->execute(); } else { http_response_code(404); print ($_SESSION['smarty']->fetch('str:'.$rout.'/e404')); } die(); break;case 'authors':        print ($_SESSION['smarty']->fetch('str:'.$rout.'/authors'));               break;
                 case 'authors':        print ($_SESSION['smarty']->fetch('str:'.$rout.'/authors'));               break;
                 case 'product':     print ($_SESSION['smarty']->fetch('str:'.$rout.'/product'));               break;
                 // case 'register':     print ($_SESSION['smarty']->fetch('str:'.$rout.'/register'));               break;
